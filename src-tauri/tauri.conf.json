@@ -1,0 +1,53 @@
+{
+  "$schema": "https://schema.tauri.app/config/2",
+  "productName": "moyu",
+  "version": "1.0.0",
+  "identifier": "com.local.moyu",
+  "build": {
+    "beforeDevCommand": "",
+    "beforeBuildCommand": "",
+    "frontendDist": "../dist"
+  },
+  "app": {
+    "withGlobalTauri": true,
+    "windows": [
+      {
+        "label": "launcher",
+        "title": "STUDY",
+        "url": "index.html#/",
+        "width": 820,
+        "height": 620,
+        "minWidth": 820,
+        "minHeight": 560,
+        "resizable": true,
+        "decorations": true,
+        "transparent": true,
+        "backgroundColor": "#01000000",
+        "visible": true
+      }
+    ],
+    "security": {
+      "csp": null,
+      "assetProtocol": {
+        "enable": true,
+        "scope": ["$APPDATA/**", "$RESOURCE/**", "$HOME/**", "$TEMP/**", "**"]
+      }
+    }
+  },
+  "bundle": {
+    "active": false,
+    "targets": ["nsis"],
+    "icon": ["icons/icon.ico"],
+    "publisher": "moyu",
+    "windows": {
+      "webviewInstallMode": {
+        "type": "skip"
+      },
+      "nsis": {
+        "installerIcon": "icons/icon.ico",
+        "installMode": "currentUser",
+        "languages": ["SimpChinese", "English"]
+      }
+    }
+  }
+}

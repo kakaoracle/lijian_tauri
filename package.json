@@ -1,0 +1,24 @@
+{
+  "name": "moyu_tauri",
+  "productName": "moyu",
+  "version": "1.0.0",
+  "description": "moyu app rebuilt with Tauri for smaller Windows bundles",
+  "author": "Developer",
+  "type": "module",
+  "scripts": {
+    "tauri": "tauri",
+    "dev": "tauri dev",
+    "build": "powershell -ExecutionPolicy Bypass -File .\\build-node22.ps1",
+    "build:node22": "powershell -ExecutionPolicy Bypass -File .\\build-node22.ps1",
+    "test:pdf-runtime": "node tests/pdf-runtime-smoke.mjs",
+    "test": "node tests/mental-math.test.mjs && node tests/vocabulary.test.mjs && node tests/layout.test.mjs && node tests/pdf-reader.test.mjs",
+    "test:pdf-menu": "node tests/pdf-menu-zoom.test.mjs"
+  },
+  "devDependencies": {
+    "@tauri-apps/cli": "^2.11.2"
+  },
+  "dependencies": {
+    "@tauri-apps/api": "^2.9.0",
+    "pdfjs-dist": "^5.4.296"
+  }
+}
